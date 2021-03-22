@@ -7,8 +7,6 @@ services:
     ports:
       - 8123:8123
     restart: unless-stopped
-    network_mode: host
-    privileged: true
     user: "${UID}:${UID}"
     volumes:
       # Local path where your home assistant config will be stored
