@@ -4,10 +4,16 @@ services:
   homeassistant:
     container_name: ${PROJECT_NAME}
     image: homeassistant/raspberrypi3-homeassistant:stable
+    ports:
+      - 8123:8123
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    user: "${UID}:${UID}"
     volumes:
       # Local path where your home assistant config will be stored
       - ./volumes/home-assistant/:/config
       - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
-    network_mode: host
-    user: "${UID}:${UID}"
+
+volumes:
+  homeassistant
