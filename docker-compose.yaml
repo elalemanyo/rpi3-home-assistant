@@ -16,4 +16,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
 volumes:
-  homeassistant
+  homeassistant:
