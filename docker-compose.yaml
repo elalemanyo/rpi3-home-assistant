@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     volumes:
       # Local path where your home assistant config will be stored
-      - ./volumes/home-assistant/:/config
+      - ./volumes/home-assistant/config:/config
       - /etc/localtime:/etc/localtime:ro
 
 volumes:
